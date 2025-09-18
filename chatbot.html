@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Guide - Monastery360</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F5F5F4; /* stone-100 */
+    }
+    /* Simple scrollbar styling */
+    #chat-window::-webkit-scrollbar {
+      width: 8px;
+    }
+    #chat-window::-webkit-scrollbar-track {
+      background: #e7e5e4; /* stone-200 */
+    }
+    #chat-window::-webkit-scrollbar-thumb {
+      background-color: #a8a29e; /* stone-400 */
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body class="text-stone-800 flex flex-col min-h-screen">
+
+  <header class="bg-stone-800 text-white sticky top-0 z-50 shadow-lg">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold tracking-wider">Monastery360</a>
+      <div class="hidden md:flex space-x-6 items-center">
+        <a href="index.html#features" class="hover:text-amber-400 transition">Features</a>
+        <a href="index.html#discover" class="hover:text-amber-400 transition">Discover</a>
+        <a href="index.html#testimonials" class="hover:text-amber-400 transition">Testimonials</a>
+        <a href="chatbot.html" class="text-amber-400 transition font-semibold">AI Guide</a>
+        <a href="#" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg transition">Download App</a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+      <a href="index.html#features" class="block py-2 hover:text-amber-400">Features</a>
+      <a href="index.html#discover" class="block py-2 hover:text-amber-400">Discover</a>
+      <a href="index.html#testimonials" class="block py-2 hover:text-amber-400">Testimonials</a>
+      <a href="chatbot.html" class="block py-2 text-amber-400 font-semibold">AI Guide</a>
+      <a href="#"
+        class="block mt-2 bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg text-center">Download App</a>
+    </div>
+  </header>
+
+  <main class="flex-grow container mx-auto p-4 md:p-6 flex flex-col">
+    <div class="text-center my-8">
+      <h1 class="text-3xl md:text-4xl font-bold mb-2">AI-Powered Guide</h1>
+      <p class="text-lg text-stone-600">Ask me anything about Sikkim's monasteries!</p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl mx-auto flex flex-col flex-grow">
+      <div id="chat-window" class="p-4 h-96 overflow-y-auto flex flex-col space-y-4">
+        <div class="flex justify-start">
+          <div class="bg-stone-200 text-stone-800 p-3 rounded-lg max-w-xs">
+            <p>Hello! I am your AI guide for Monastery360. How can I help you today? You can ask me about Rumtek, Pemayangtse, or Tashiding monastery.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-stone-200 flex items-center bg-stone-50 rounded-b-lg">
+        <input type="text" id="user-input" placeholder="Type your message..." class="flex-grow p-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+        <button id="send-button" class="ml-4 bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg transition">
+          Send
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-stone-900 text-stone-300 py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2025 Monastery360. All Rights Reserved.</p>
+      <p>Preserving Culture, Empowering Communities.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Chatbot functionality
+    const chatWindow = document.getElementById('chat-window');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+
+    // --- Function to handle sending a message ---
+    function sendMessage() {
+      const messageText = userInput.value.trim();
+      if (messageText === '') return;
+
+      // 1. Display user's message
+      displayMessage(messageText, 'user');
+      
+      // 2. Clear input field
+      userInput.value = '';
+
+      // 3. Get and display bot's response after a short delay
+      setTimeout(() => {
+        const botResponse = getBotResponse(messageText);
+        displayMessage(botResponse, 'bot');
+      }, 1000);
+    }
+
+    // --- Function to display a message in the chat window ---
+    function displayMessage(text, sender) {
+      const messageContainer = document.createElement('div');
+      const messageBubble = document.createElement('div');
+      
+      messageBubble.classList.add('p-3', 'rounded-lg', 'max-w-xs');
+      messageBubble.textContent = text;
+
+      if (sender === 'user') {
+        messageContainer.classList.add('flex', 'justify-end');
+        messageBubble.classList.add('bg-amber-500', 'text-white');
+      } else {
+        messageContainer.classList.add('flex', 'justify-start');
+        messageBubble.classList.add('bg-stone-200', 'text-stone-800');
+      }
+
+      messageContainer.appendChild(messageBubble);
+      chatWindow.appendChild(messageContainer);
+
+      // Scroll to the latest message
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    // --- Simple rule-based logic for bot responses ---
+    function getBotResponse(text) {
+      const lowerCaseText = text.toLowerCase();
+
+      if (lowerCaseText.includes('rumtek')) {
+        return "Rumtek Monastery is one of the largest in Sikkim. It is the seat of the Karmapa Lama, the head of the Karma Kagyu lineage of Tibetan Buddhism. It's renowned for its vibrant murals and traditional architecture.";
+      } else if (lowerCaseText.includes('pemayangtse')) {
+        return "Pemayangtse Monastery, founded in the 17th century, is one of Sikkim's oldest. It is famous for a seven-tiered wooden sculpture depicting the heavenly palace of Guru Rinpoche. It also offers stunning views of Mount Kanchenjunga.";
+      } else if (lowerCaseText.includes('tashiding')) {
+        return "Tashiding Monastery is considered the most sacred in Sikkim. It's known for the Bhumchu festival, where a sacred pot of water is opened to predict the future of the state for the coming year. Its location is believed to cleanse the sins of those who visit.";
+      } else if (lowerCaseText.includes('hello') || lowerCaseText.includes('hi')) {
+        return "Hello! How can I assist you with information about Sikkim's monasteries?";
+      } else if (lowerCaseText.includes('thank you') || lowerCaseText.includes('thanks')) {
+        return "You're welcome! Feel free to ask another question.";
+      }
+
+      return "I'm sorry, I can only provide information on Rumtek, Pemayangtse, and Tashiding monasteries at the moment. Please ask about one of them.";
+    }
+
+    // --- Event Listeners ---
+    sendButton.addEventListener('click', sendMessage);
+    userInput.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+  </script>
+</body>
+</html>
