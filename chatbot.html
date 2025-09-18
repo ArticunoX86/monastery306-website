@@ -167,5 +167,17 @@
     });
 
   </script>
+  <script>
+  // Find the button and the menu in the document
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  // Add an event listener to the button that waits for a click
+  mobileMenuButton.addEventListener('click', () => {
+    // When clicked, toggle the 'hidden' class on the menu div
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 </body>
+
 </html>
