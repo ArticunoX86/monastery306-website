@@ -19,12 +19,6 @@
       background-position: center center;
       height: 100vh;
     }
-    .modal-backdrop {
-      transition: opacity 0.3s ease-in-out;
-    }
-    .modal-content {
-      transition: transform 0.3s ease-in-out;
-    }
     /* Animate on scroll (hidden state) */
     .animate-up {
       opacity: 0;
@@ -48,8 +42,14 @@
       <a href="#features" class="hover:text-amber-400 transition">Features</a>
       <a href="#discover" class="hover:text-amber-400 transition">Discover</a>
       <a href="#testimonials" class="hover:text-amber-400 transition">Testimonials</a>
-      <a href="chatbot.html" class="hover:text-amber-400 transition">AI Guide</a> 
-      <a href="https://drive.google.com/file/d/12J84UNZKfvddxZDnTZWvgwF9dZFK1tBT/view?usp=sharing" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg transition">Download App</a>
+      <a href="chatbot.html" class="hover:text-amber-400 transition">AI Guide</a>
+      <!-- Emergency SOS Button -->
+<a href="#emergency-sos" 
+   class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full shadow-lg transition transform hover:scale-105">
+    Emergency SOS
+</a>
+ 
+      <a href="#" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg transition">Download App</a>
     </div>
     <button id="mobile-menu-button" class="md:hidden focus:outline-none">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -61,6 +61,12 @@
     <a href="#features" class="block py-2 hover:text-amber-400">Features</a>
     <a href="#discover" class="block py-2 hover:text-amber-400">Discover</a>
     <a href="#testimonials" class="block py-2 hover:text-amber-400">Testimonials</a>
+    <!-- Emergency SOS Button -->
+<a href="#emergency-sos" 
+   class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full shadow-lg transition transform hover:scale-105">
+   Emergency SOS
+</a>
+
      <a href="chatbot.html" class="block py-2 hover:text-amber-400">AI Guide</a>
     <a href="#"
       class="block mt-2 bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg text-center">Download App</a>
@@ -85,71 +91,122 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-2">A Unified Digital Heritage Platform</h2>
-          <p class="text-lg text-stone-600">All the tools you need for tourism and cultural preservation.</p>
+  
+    
+<section id="features" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-2">A Unified Digital Heritage Platform</h2>
+      <p class="text-lg text-stone-600">All the tools you need for tourism and cultural preservation.</p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Feature 1 -->
+      <div class="bg-stone-50 p-6 rounded-lg shadow-md text-center animate-up" data-aos="fade-up-left">
+        <div class="bg-amber-100 text-amber-600 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+          </svg>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- Feature 1 -->
-          <div class="bg-stone-50 p-8 rounded-lg shadow-md text-center animate-up">
-            <div
-              class="bg-amber-100 text-amber-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-2">360° Virtual Tours</h3>
-            <p class="text-stone-600">Step inside ancient monasteries with immersive panoramic views and narrated
-              walkthroughs.</p>
-          </div>
-          <!-- Feature 2 -->
-          <div class="bg-stone-50 p-8 rounded-lg shadow-md text-center animate-up">
-            <div
-              class="bg-amber-100 text-amber-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 6.253v11.494m-9-5.747h18"></path>
-                <path d="M12 21a9 9 0 110-18 9 9 0 010 18z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-2">Interactive Map</h3>
-            <p class="text-stone-600">Discover monastery locations, plan your travel, and find nearby attractions with
-              ease.</p>
-          </div>
-          <!-- Feature 3 -->
-          <div class="bg-stone-50 p-8 rounded-lg shadow-md text-center animate-up">
-            <div
-              class="bg-amber-100 text-amber-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-2">Digital Archives</h3>
-            <p class="text-stone-600">Access high-resolution scans of ancient murals, manuscripts, and historical
-              documents.</p>
-          </div>
-          <!-- Feature 4 -->
-          <div class="bg-stone-50 p-8 rounded-lg shadow-md text-center animate-up">
-            <div
-              class="bg-amber-100 text-amber-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-2">AI-Powered Guide</h3>
-            <p class="text-stone-600">Ask questions and get instant, context-aware answers about the history, art, and
-              significance of each site.</p>
-          </div>
-        </div>
+        <h3 class="text-xl font-bold mb-2">360° Virtual Tours</h3>
+        <p class="text-stone-600">Step inside ancient monasteries with immersive panoramic views and narrated walkthroughs.</p>
       </div>
-    </section>
+
+      <!-- Feature 2 -->
+      <div class="bg-stone-50 p-6 rounded-lg shadow-md text-center animate-up" data-aos="fade-up-right">
+        <div class="bg-amber-100 text-amber-600 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 6.253v11.494m-9-5.747h18"></path>
+            <path d="M12 21a9 9 0 110-18 9 9 0 010 18z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Interactive Map</h3>
+        <p class="text-stone-600">Discover monastery locations, plan your travel, and find nearby attractions with ease.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="bg-stone-50 p-6 rounded-lg shadow-md text-center animate-up" data-aos="fade-up-left">
+        <div class="bg-amber-100 text-amber-600 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Digital Archives</h3>
+        <p class="text-stone-600">Access high-resolution scans of ancient murals, manuscripts, and historical documents.</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="bg-stone-50 p-6 rounded-lg shadow-md text-center animate-up" data-aos="fade-up-right">
+        <div class="bg-amber-100 text-amber-600 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">AI-Powered Guide</h3>
+        <p class="text-stone-600">Ask questions and get instant, context-aware answers about the history, art, and significance of each site.</p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="bg-stone-50 p-6 rounded-lg shadow-md text-center animate-up" data-aos="fade-up-left">
+        <div class="bg-amber-100 text-amber-600 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 19V6h13M9 6l7-4v13"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Narrated Walkthrough</h3>
+        <p class="text-stone-600">Listen to guided walkthroughs that narrate the stories, rituals, and legends of the monasteries.</p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="bg-stone-50 p-6 rounded-lg shadow-md text-center animate-up" data-aos="fade-up-right">
+        <div class="bg-amber-100 text-amber-600 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M18 10c0-1.657-1.343-3-3-3H5a3 3 0 00-3 3v4a3 3 0 003 3h10c1.657 0 3-1.343 3-3v-1"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 12h6l-3-3m0 6l3-3"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Emergency Services</h3>
+        <p class="text-stone-600">Quick access to medical aid, transport, and helplines for safe and worry-free travel.</p>
+      </div>
+
+      <!-- Feature 7 -->
+      <div class="bg-stone-50 p-6 rounded-lg shadow-md text-center animate-up" data-aos="fade-up-left">
+        <div class="bg-amber-100 text-amber-600 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 7h18M3 12h18M3 17h18"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Bookings: Local Stay & Restaurants</h3>
+        <p class="text-stone-600">Easily book accommodations and authentic local dining experiences nearby.</p>
+      </div>
+
+      <!-- Feature 8 -->
+      <div class="bg-stone-50 p-6 rounded-lg shadow-md text-center animate-up" data-aos="fade-up-right">
+        <div class="bg-amber-100 text-amber-600 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 17v-6h13M9 11l6-6v12"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Local Culture Events</h3>
+        <p class="text-stone-600">Stay updated on monastery festivals, rituals, and cultural events to enrich your visit.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- Discover Section -->
     <section id="discover" class="py-20">
@@ -159,45 +216,110 @@
           <p class="text-lg text-stone-600">Click on a monastery to learn more about its unique heritage.</p>
         </div>
         <div id="monastery-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-  <!-- Rumtek Monastery Card -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden animate-up">
-           <img src="assests/images/rumtek.png" alt="Rumtek Monastery" class="w-full h-48 object-cover">
+          <!-- Rumtek Monastery Card -->
+          <a href="/monastery306-website-main/Rumtek/rumtek.html" 
+             class="block bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg animate-up">
+            <img src="assests/images/rumtek.png" alt="Rumtek Monastery" class="w-full h-48 object-cover">
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">Rumtek Monastery</h3>
-                <p class="text-stone-600 mb-4">
-                  One of Sikkim’s largest and most significant monasteries, Rumtek is the seat of the Karmapa
-                  and a hub of Tibetan Buddhist culture.
-                </p>
-              <a href="rumtek.html" class="text-amber-600 font-semibold hover:underline">Learn More →</a>
+              <p class="text-stone-600 mb-4">
+                One of Sikkim’s largest and most significant monasteries, Rumtek is the seat of the Karmapa
+                and a hub of Tibetan Buddhist culture.
+              </p>
+              <span class="text-amber-600 font-semibold hover:underline">Learn More →</span>
             </div>
-           </div>
-          <div class="bg-white rounded-lg shadow-md overflow-hidden animate-up">
-        <img src="assests/images/Pemayangtse.png" alt="Pemayangtse Monastery" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Pemayangtse Monastery</h3>
-          <p class="text-stone-600 mb-4">
-            Founded in the 17th century, Pemayangtse is one of the oldest monasteries in Sikkim and 
-            offers breathtaking views of Mount Kanchenjunga.
-          </p>
-          <a href="#" class="text-amber-600 font-semibold hover:underline">Learn More →</a>
-        </div>
-      </div>
-      <div class="bg-white rounded-lg shadow-md overflow-hidden animate-up">
-        <img src="assests/images/Tashiding.png" alt="Tashiding Monastery" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Tashiding Monastery</h3>
-          <p class="text-stone-600 mb-4">
-            Revered as the most sacred monastery in Sikkim, Tashiding is known for its holy Bumchu festival
-            and its tranquil spiritual ambiance.
-          </p>
-          <a href="#" class="text-amber-600 font-semibold hover:underline">Learn More →</a>
-        </div>
-      </div>
-        </div>
+          </a>
 
+          <!-- Pemayangtse Monastery -->
+          <a href="/monastery306-website-main/Pemayangtse/pemayangtse.html" 
+             class="block bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg animate-up">
+            <img src="assests/images/Pemayangtse.png" alt="Pemayangtse Monastery" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Pemayangtse Monastery</h3>
+              <p class="text-stone-600 mb-4">
+                Founded in the 17th century, Pemayangtse is one of the oldest monasteries in Sikkim and 
+                offers breathtaking views of Mount Kanchenjunga.
+              </p>
+              <span class="text-amber-600 font-semibold hover:underline">Learn More →</span>
+            </div>
+          </a>
 
+          <!-- Tashiding Monastery -->
+          <a href="/monastery306-website-main/Tashiding/tashiding.html" 
+             class="block bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg animate-up">
+            <img src="assests/images/Tashiding.png" alt="Tashiding Monastery" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Tashiding Monastery</h3>
+              <p class="text-stone-600 mb-4">
+                Revered as the most sacred monastery in Sikkim, Tashiding is known for its holy Bumchu festival
+                and its tranquil spiritual ambiance.
+              </p>
+              <span class="text-amber-600 font-semibold hover:underline">Learn More →</span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
+    <!-- Emergency SOS -->
+    <section id="emergency-sos" class="py-20 bg-red-50 scroll-mt-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12 animate-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-red-700">Emergency SOS - Sikkim</h2>
+          <p class="text-lg text-red-600">In case of emergencies, use these official helplines immediately.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+          <!-- Each emergency card uses animate-up so it animates like features -->
+          <div class="bg-white p-6 rounded-lg shadow-md animate-up">
+            <h3 class="text-xl font-bold mb-2 text-red-700">Police</h3>
+            <p class="text-stone-700 text-lg">100</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md animate-up">
+            <h3 class="text-xl font-bold mb-2 text-red-700">Ambulance</h3>
+            <p class="text-stone-700 text-lg">102</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md animate-up">
+            <h3 class="text-xl font-bold mb-2 text-red-700">Fire Services</h3>
+            <p class="text-stone-700 text-lg">101</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md animate-up">
+            <h3 class="text-xl font-bold mb-2 text-red-700">Disaster Management</h3>
+            <p class="text-stone-700 text-lg">1077</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md animate-up">
+            <h3 class="text-xl font-bold mb-2 text-red-700">Tourist Helpline</h3>
+            <p class="text-stone-700 text-lg">1800-345-3256</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md animate-up">
+            <h3 class="text-xl font-bold mb-2 text-red-700">Sikkim Police HQ</h3>
+            <p class="text-stone-700 text-lg">03592-202033</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md animate-up">
+            <h3 class="text-xl font-bold mb-2 text-red-700">Central Referral Hospital</h3>
+            <p class="text-stone-700 text-lg">03592-231555</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md animate-up">
+            <h3 class="text-xl font-bold mb-2 text-red-700">Traffic Helpline</h3>
+            <p class="text-stone-700 text-lg">03592-201979</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md animate-up">
+            <h3 class="text-xl font-bold mb-2 text-red-700">Women Helpline</h3>
+            <p class="text-stone-700 text-lg">1091</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 bg-stone-800 text-white">
@@ -229,36 +351,31 @@
     </div>
   </footer>
 
-  <script>
-    // IntersectionObserver for hero text + features
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        } else {
-          entry.target.classList.remove("visible"); // remove when out of view
-        }
-      });
-    }, { threshold: 0.2 });
+ <script>
+  // IntersectionObserver with threshold 0 → triggers as soon as elements appear
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible"); // 👈 remove when out of view
+      }
+    });
+  }, { threshold: 0.1 }); // small threshold makes it smoother
 
-    // Watch hero text + all feature cards
-    document.querySelectorAll(".animate-up").forEach(el => observer.observe(el));
-  </script>
-  <script>
-  // Find the button and the menu in the document
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  // Add an event listener to the button that waits for a click
-  mobileMenuButton.addEventListener('click', () => {
-    // When clicked, toggle the 'hidden' class on the menu div
-    mobileMenu.classList.toggle('hidden');
-  });
+  // Observe all animate-up elements
+  document.querySelectorAll(".animate-up").forEach(el => observer.observe(el));
 </script>
+
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 
 </body>
 </html>
-
-
-
-
